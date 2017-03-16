@@ -169,8 +169,9 @@ print("\n\n***** Problem 9 *****")
 
 ## Note that you can use another list you have already created for this problem.
 
+names_with_not_too_much_seniority = [lol[0] for lol in student_tups_list if len(lol[0]) > lol[1]]
 
-
+print (names_with_not_too_much_seniority)
 
 ## [PROBLEM 10]
 print("\n\n***** Problem 10 *****")
@@ -189,18 +190,40 @@ print("\n\n***** Problem 10 *****")
 
 # Define readfiles (make sure to close the file reference in the right place)
 
+def readfiles(list_of_file_names):
+    for a_file in list_of_file_names:
+
+        f_name = open(a_file)
+
+        for a_line in f_name:
+            yield a_line
+
+        f_name.close()
+
+
 
 # Define len_check
+
+def len_check(file_lines):
+
+    lines = []
+
+    for x in file_lines:
+        if len(x) > 40:
+            lines.append(x)
+
+    return lines
 
 
 # Define main_filterer
 
-
+def main_filterer(more_file_names):
+    return len_check(readfiles(more_file_names))
 
 ## Uncomment this code to test so you can see easily what results from your code. DO uncomment it. DO NOT delete or change it. (You can add other code above while you work, of course.)
-# provided_file_names = ["samplehw6_1.txt","samplehw6_2.txt"]
-# for ln in main_filterer(provided_file_names):
-#     print(ln.rstrip('\n'), end=" ")
+provided_file_names = ["samplehw6_1.txt","samplehw6_2.txt"]
+for ln in main_filterer(provided_file_names):
+    print(ln.rstrip('\n'), end=" ")
 #####
 
 
