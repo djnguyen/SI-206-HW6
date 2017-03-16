@@ -131,7 +131,11 @@ print("\n\n***** Problem 6 *****")
 
 ## You may add a method to the Student class if you wish in order to do this, but you do not need to. (If you do, make sure you do not create any syntax errors that keep code/tests from running!)
 
+prod_iter = map(lambda student: student.num_programs/student.years_UM, programmers)
 
+prod_list = list(prod_iter)
+
+#print (prod_list)
 
 ## [PROBLEM 7]
 print("\n\n***** Problem 7 *****")
