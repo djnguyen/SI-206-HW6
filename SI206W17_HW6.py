@@ -59,7 +59,17 @@ print("\n\n***** Problem 2 *****")
 ## The function should return the new list of accumulated -- mapped! -- values.
 ## HINT: you should be able to write this in 5 lines of code or fewer! 
 
+def personal_map(object,a_list):
+    mapped_values = [object(x) for x in a_list] #using list comprehension
+    return mapped_values
 
+
+# mapped_values = []
+
+# for x in a_list:
+#     mapped_values.append(object(x)) 
+
+# regular for loops
 
 
 
@@ -78,6 +88,7 @@ def access_third_elem(seq):
 
 # Write your equivalent function and assignment statement here
 
+sample_func = (lambda x: x[2])
 
 ## [PROBLEM 4]
 print("\n\n***** Problem 4 *****")
