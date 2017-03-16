@@ -193,7 +193,7 @@ print("\n\n***** Problem 10 *****")
 def readfiles(list_of_file_names):
     for a_file in list_of_file_names:
 
-        f_name = open(a_file)
+        f_name = open(a_file, 'r')
 
         for a_line in f_name:
             yield a_line
