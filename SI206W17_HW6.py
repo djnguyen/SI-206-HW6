@@ -59,15 +59,15 @@ print("\n\n***** Problem 2 *****")
 ## The function should return the new list of accumulated -- mapped! -- values.
 ## HINT: you should be able to write this in 5 lines of code or fewer! 
 
-def personal_map(object,a_list):
-    mapped_values = [object(x) for x in a_list] #using list comprehension
+def personal_map(function_object,a_list):
+    mapped_values = [function_object(x) for x in a_list] # using list comprehension
     return mapped_values
 
 
 # mapped_values = []
 
 # for x in a_list:
-#     mapped_values.append(object(x)) 
+#     mapped_values.append(function_object(x)) 
 
 # regular for loops
 
@@ -88,7 +88,7 @@ def access_third_elem(seq):
 
 # Write your equivalent function and assignment statement here
 
-sample_func = (lambda x: x[2])
+sample_func = (lambda seq: seq[2])
 
 ## [PROBLEM 4]
 print("\n\n***** Problem 4 *****")
@@ -109,9 +109,9 @@ student_tups_list = list(student_tups)
 
 ## You can test this out with any code you like here, and similar below other problems, but make sure to comment out any code that uses up the iterator in order to pass the tests!
     
-print (student_tups)
+#print (student_tups)
 
-print (student_tups_list)
+#print (student_tups_list)
 
 ## [PROBLEM 5]
 print("\n\n***** Problem 5 *****")
@@ -169,9 +169,9 @@ print("\n\n***** Problem 9 *****")
 
 ## Note that you can use another list you have already created for this problem.
 
-names_with_not_too_much_seniority = [lol[0] for lol in student_tups_list if len(lol[0]) > lol[1]]
+names_with_not_too_much_seniority = [student[0] for student in student_tups_list if len(student[0]) > student[1]]
 
-print (names_with_not_too_much_seniority)
+#print (names_with_not_too_much_seniority)
 
 ## [PROBLEM 10]
 print("\n\n***** Problem 10 *****")
@@ -206,13 +206,9 @@ def readfiles(list_of_file_names):
 
 def len_check(file_lines):
 
-    lines = []
-
     for x in file_lines:
         if len(x) > 40:
-            lines.append(x)
-
-    return lines
+            yield x
 
 
 # Define main_filterer
