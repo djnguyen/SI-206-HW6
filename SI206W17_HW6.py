@@ -3,6 +3,8 @@ import json
 import unittest
 import random
 
+## Name: David Nguyen (djnguyen)
+## Discussion: Thursday (3-4 PM)
 ## As usual, this HW is worth 500 points in total.
 ## There are 10 problems. Each one is worth 50 points.
 
@@ -70,8 +72,6 @@ def personal_map(function_object,a_list):
 #     mapped_values.append(function_object(x)) 
 
 # regular for loops
-
-
 
 
 ## [PROBLEM 3]
@@ -169,7 +169,7 @@ print("\n\n***** Problem 9 *****")
 
 ## Note that you can use another list you have already created for this problem.
 
-names_with_not_too_much_seniority = [student[0] for student in student_tups_list if len(student[0]) > student[1]]
+names_with_not_too_much_seniority = [student_attribute[0] for student_attribute in student_tups_list if len(student_attribute[0]) > student_attribute[1]]
 
 #print (names_with_not_too_much_seniority)
 
@@ -192,7 +192,6 @@ print("\n\n***** Problem 10 *****")
 
 def readfiles(list_of_file_names):
     for a_file in list_of_file_names:
-
         f_name = open(a_file, 'r')
 
         for a_line in f_name:
